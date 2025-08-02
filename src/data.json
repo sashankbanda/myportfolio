@@ -1,0 +1,51 @@
+{
+  "name": "Banda Sashank",
+  "bio": "A B.Tech in Computer Science and Engineering student at Vellore Institute of Technology, Chennai.",
+  "about": {
+    "intro": "I am an enthusiastic and motivated computer science and engineering student with a strong passion for technology. My academic journey has provided me with a solid foundation in programming and software development. I am always looking for opportunities to apply my skills to real-world problems and contribute to innovative projects.",
+    "expertise": "My technical expertise spans across various domains, from full-stack development to mobile applications. I am particularly interested in AI and machine learning applications, having developed projects using tools like OpenAI Whisper and GROQ APIs. I thrive in collaborative environments and enjoy leading teams to create engaging content and effective solutions."
+  },
+  "contact": {
+    "email": "sashankbanda@gmail.com",
+    "phone": "+91 8074782067",
+    "linkedin": "https://in.linkedin.com/in/banda-sashank-578893320",
+    "github": "https://github.com/sashankbanda"
+  },
+  "skills": [
+    "Java", "Python", "Html", "CSS", "React", "JavaScript", "Node.js", "Express.js",
+    "Spring Boot", "Tailwind CSS", "Flutter", "Next.js", "MySQL", "Firebase",
+    "PostgreSQL", "MongoDB", "Windows", "Linux", "Git"
+  ],
+  "projects": [
+    {
+      "title": "Speak to Learn – Turn Audio into Smart Study Material",
+      "description": "I built this project during my internship at SASNEVI. It takes spoken audio, turns it into a PDF, and uploads it to an AI tool. Users can ask questions or get multiple-choice quizzes based on the content. It helps make learning from audio easier and more interactive.",
+      "tech": ["Python", "Html", "CSS", "React", "JavaScript"],
+      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+    },
+    {
+      "title": "YouTube Auto Uploader",
+      "description": "Built an automated uploader to schedule and publish videos to YouTube using the YouTube Data API. Prevents duplicate uploads by verifying filenames against existing video titles.",
+      "tech": ["Node.js", "OAuth 2.0", "YouTube Data API"],
+      "githubLink": "https://github.com/sashankbanda/youtube-auto-uploader"
+    },
+    {
+      "title": "Audio to Text PDF Converter",
+      "description": "A full-stack app to convert audio files to text using OpenAI Whisper with real-time transcription. Features live SSE updates, progress bars, and PDF generation post transcription.",
+      "tech": ["Flask", "React.js", "OpenAI Whisper", "SSE"],
+      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+    },
+    {
+      "title": "QueryPDF (AI PDF Question Answering)",
+      "description": "Developed a tool to query PDF content using LLMs via GROQ and Google APIs. Supports secure API-based interaction, a modular Flask backend, and a React frontend.",
+      "tech": ["Python", "React.js", "GROQ API", "Google API"],
+      "githubLink": "https://github.com/sashankbanda/Query-PDF"
+    },
+    {
+      "title": "Audio to Text PDF to query solver",
+      "description": "Intenship: Contributed to a client project at SASNEVI Startup Company by developing a tool to convert audio to text and generate PDFs. This was part of a larger project including a Query PDF Bot.",
+      "tech": ["Flask", "React.js", "OpenAI Whisper", "Python"],
+      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+    }
+  ]
+}
