@@ -692,7 +692,7 @@ const ContactSection = () => {
         <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-link group">
           <Linkedin size={36} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
         </a>
-        <a href="#" className="social-link group">
+        <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-link group">
           <Star size={36} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
         </a>
       </div>
