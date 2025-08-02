@@ -30,7 +30,7 @@ exports.handler = async (event) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'sashankbanda@gmail.com', // Replace with your receiving email address
+    to: 'your-email@example.com', // Replace with your receiving email address
     subject: `New contact from your portfolio website from ${name}`,
     html: `
       <p>Name: ${name}</p>
