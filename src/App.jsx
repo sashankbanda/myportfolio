@@ -273,12 +273,22 @@ const ContactSection = () => {
       <div className="text-center text-base md:text-lg text-gray-300 space-y-4">
         <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <div className="flex items-center space-x-2">
+          {/* <div className="flex items-center space-x-2">
             <Mail size={24} className="text-purple-400" />
             <a href={`mailto:${portfolioData.contact.email}`} className="text-pink-400 hover:underline transition-colors duration-300">
               {portfolioData.contact.email}
             </a>
-          </div>
+          </div> */}
+        <div className="flex items-center space-x-2">
+            <Mail size={24} className="text-purple-400" />
+            <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-pink-400 hover:underline transition-colors duration-300"
+                aria-label="Scroll to Contact Form"
+            >
+                Contact Form
+            </button>
+        </div>
           <div className="flex items-center space-x-2">
             <Phone size={24} className="text-green-400" />
             <a href={`tel:${portfolioData.contact.phone}`} className="text-blue-400 hover:underline transition-colors duration-300">
