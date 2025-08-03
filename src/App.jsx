@@ -93,12 +93,9 @@ const HeroSection = ({ setActiveSection }) => {
         <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="social-link">
           <Github size={28} />
         </a>
-        {/* <a href={`mailto:${portfolioData.contact.email}`} className="social-link">
+        <a href={`mailto:${portfolioData.contact.email}`} className="social-link">
           <Mail size={28} />
-        </a> */}
-        <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-            <Mail size={28} />
-        </button>
+        </a>
       </div>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         <button
@@ -278,12 +275,9 @@ const ContactSection = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <div className="flex items-center space-x-2">
             <Mail size={24} className="text-purple-400" />
-            {/* <a href={`mailto:${portfolioData.contact.email}`} className="text-pink-400 hover:underline transition-colors duration-300">
+            <a href={`mailto:${portfolioData.contact.email}`} className="text-pink-400 hover:underline transition-colors duration-300">
               {portfolioData.contact.email}
-            </a> */}
-            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                <Mail size={28} />
-            </button>
+            </a>
           </div>
           <div className="flex items-center space-x-2">
             <Phone size={24} className="text-green-400" />
