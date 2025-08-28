@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { Github, Linkedin, Mail, Code, Star, User, Home, Lightbulb, Send, Download, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, User, Home, Lightbulb, Send, Download, Phone, ExternalLink, Instagram, Eye, GraduationCap, BookOpen, X } from 'lucide-react';
 import portfolioData from './data.json'; // Import the JSON data
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // Main App component
 export default function App() {
@@ -14,6 +16,8 @@ export default function App() {
         return <AboutSection />;
       case 'projects':
         return <ProjectsSection />;
+      case 'education':
+        return <EducationSection />;
       case 'contact':
         return <ContactSection />;
       default:
@@ -43,6 +47,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     { name: 'home', icon: Home, label: 'Home' },
     { name: 'about', icon: User, label: 'About' },
     { name: 'projects', icon: Lightbulb, label: 'Projects' },
+    { name: 'education', icon: GraduationCap, label: 'Education' },
     { name: 'contact', icon: Send, label: 'Contact' }
   ];
 
@@ -97,28 +102,42 @@ const HeroSection = ({ setActiveSection }) => {
           <Mail size={28} />
         </a>
       </div>
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <button
           onClick={() => setActiveSection('projects')}
-          className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full text-lg shadow-lg
+          className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full shadow-lg
                      hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 animate-pulse-neon"
         >
           View My Work
         </button>
-        <a
-          href="/B_Sashank_Main_Resume.pdf"
-          download
-          className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-700 text-white font-bold rounded-full text-lg shadow-lg
-                     hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
-        >
-          <Download size={20} />
-          Download Resume
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="/B_SASHANK_RESUME_st.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white font-bold rounded-full shadow-lg
+                       hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+          >
+            <Eye size={20} />
+            View Resume
+          </a>
+          <a
+            href="/B_SASHANK_RESUME_st.pdf"
+            download
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white font-bold rounded-full shadow-lg
+                       hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+          >
+            <Download size={20} />
+            Download
+          </a>
+        </div>
       </div>
     </div>
   );
 };
 
+// About Section Component
+// About Section Component
 // About Section Component
 const AboutSection = () => {
   return (
@@ -128,16 +147,120 @@ const AboutSection = () => {
         <p>
           {portfolioData.about.intro}
         </p>
-        <p>
-          {portfolioData.about.expertise}
-        </p>
+        <div className="space-y-4">
+          {portfolioData.about.expertise.split('\n\n').map((paragraph, index) => {
+            const colonIndex = paragraph.indexOf(':');
+            if (colonIndex !== -1) {
+              const heading = paragraph.substring(0, colonIndex + 1);
+              const description = paragraph.substring(colonIndex + 1);
+              return (
+                <p key={index}>
+                  <strong className="font-bold text-pink-400">{heading}</strong>
+                  {description}
+                </p>
+              );
+            }
+            return <p key={index}>{paragraph}</p>;
+          })}
+        </div>
       </div>
-      <div className="mt-8">
-        <h3 className="text-2xl font-bold text-white mb-4">My Skills</h3>
-        <div className="flex flex-wrap gap-3 md:gap-4">
-          {portfolioData.skills.map(skill => (
-            <span key={skill} className="bg-gray-800 text-purple-400 px-4 py-2 rounded-full font-medium transition-colors duration-300 hover:bg-purple-900 hover:text-white">
-              {skill}
+
+      <div className="mt-12">
+        <h3 className="text-3xl font-bold text-white mb-8 text-center">My Skills</h3>
+        <div className="space-y-10">
+          {/* Main category loop (e.g., "Web Development") */}
+          {Object.entries(portfolioData.skills).map(([mainCategory, subCategories]) => (
+            <div key={mainCategory}>
+              <h4 className="text-2xl font-bold text-white mb-6">{mainCategory}</h4>
+              
+              {/* Sub-category loop (e.g., "Backend") */}
+              {Object.entries(subCategories).map(([subCategory, details]) => (
+                <div key={subCategory} className="mb-6 last:mb-0">
+                  <h5 className="text-xl font-semibold text-pink-400 mb-4">{subCategory}</h5>
+                  <div className="pl-4 space-y-4">
+                    
+                    {/* Skill type loop using a Grid layout for alignment */}
+                    {Object.entries(details).map(([type, list]) => (
+                      <div key={type} className="grid grid-cols-[140px_1fr] items-start gap-x-5">
+                        <div className="text-right font-medium text-purple-400 pt-1">
+                          {type.replace(' & Markup', '')}
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {list.map(item => (
+                            <span 
+                              key={item} 
+                              className="bg-gray-800/70 border border-white/10 text-gray-200 px-3 py-1 text-sm rounded-full 
+                                         font-medium transition-all duration-200 cursor-default
+                                         hover:bg-purple-600 hover:border-purple-500 hover:scale-105"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+// Project Detail Modal Component
+const ProjectDetailModal = ({ project, onClose }) => {
+  const [markdownContent, setMarkdownContent] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (project?.detailedDescription && typeof project.detailedDescription === 'string' && project.detailedDescription.endsWith('.md')) {
+      setIsLoading(true);
+      fetch(project.detailedDescription)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(text => {
+          setMarkdownContent(text);
+          setIsLoading(false);
+        })
+        .catch(error => {
+          console.error("Failed to fetch markdown:", error);
+          setMarkdownContent("Failed to load project details.");
+          setIsLoading(false);
+        });
+    } else {
+      // Fallback for old string/array format
+      setMarkdownContent(Array.isArray(project?.detailedDescription) ? project.detailedDescription.join('\n') : project?.detailedDescription || '');
+      setIsLoading(false);
+    }
+  }, [project]);
+
+  if (!project) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="relative max-w-2xl w-full bg-gray-900 rounded-2xl p-8 card-glow animate-fade-in max-h-[90vh] overflow-y-auto">
+        <button 
+          onClick={onClose} 
+          className="sticky top-0 right-0 float-right -mt-4 -mr-4 text-gray-400 hover:text-white transition-colors bg-gray-800 rounded-full p-1 z-10"
+        >
+          <X size={24} />
+        </button>
+        <h2 className="text-3xl font-bold text-white mb-4">{project.title}</h2>
+        
+        <div className="prose prose-invert prose-headings:text-pink-400 prose-strong:text-white">
+          {isLoading ? <p>Loading...</p> : <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownContent}</ReactMarkdown>}
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-6">
+          {project.tech.map(tech => (
+            <span key={tech} className="bg-gray-700 text-pink-400 text-sm px-3 py-1 rounded-full">
+              {tech}
             </span>
           ))}
         </div>
@@ -145,30 +268,82 @@ const AboutSection = () => {
     </div>
   );
 };
-
+// Projects Section Component
 // Projects Section Component
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  return (
+    <>
+      <div className="max-w-4xl w-full p-6 md:p-12 rounded-2xl bg-gray-900 bg-opacity-70 backdrop-blur-sm card-glow">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8 text-center">My Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {portfolioData.projects.map((project, index) => (
+            <div key={index} className="bg-gray-800 p-6 rounded-xl flex flex-col transition-all duration-300 hover:bg-gray-700 hover:scale-105 transform">
+              <div className="flex-grow">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-gray-400 mb-4 text-sm md:text-base">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map(tech => (
+                    <span key={tech} className="bg-gray-700 text-pink-400 text-xs md:text-sm px-3 py-1 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-auto flex items-center justify-between pt-4">
+                <button 
+                  onClick={() => setSelectedProject(project)}
+                  className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                >
+                  <BookOpen size={18} className="mr-2" />
+                  Read More
+                </button>
+                <div className="flex items-center space-x-4">
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                    title="View on GitHub"
+                  >
+                    <Github size={18} /> {/* <-- This is the updated icon */}
+                  </a>
+                  {project.liveLink && project.liveLink !== "#" && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center text-green-400 hover:text-green-300 transition-colors duration-300"
+                      title="View Live Project"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+    </>
+  );
+};
+
+const EducationSection = () => {
   return (
     <div className="max-w-4xl w-full p-6 md:p-12 rounded-2xl bg-gray-900 bg-opacity-70 backdrop-blur-sm card-glow">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8 text-center">My Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {portfolioData.projects.map((project, index) => (
-          <div key={index} className="bg-gray-800 p-6 rounded-xl transition-all duration-300 hover:bg-gray-700 hover:scale-105 transform">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h3>
-            <p className="text-gray-400 mb-4 text-sm md:text-base">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map(tech => (
-                <span key={tech} className="bg-gray-700 text-pink-400 text-xs md:text-sm px-3 py-1 rounded-full">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            {project.githubLink && (
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300">
-                <Code size={18} className="mr-2" />
-                View Project on GitHub
-              </a>
-            )}
+      <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8 text-center">Education</h2>
+      <div className="space-y-8">
+        {portfolioData.education.map((edu, index) => (
+          <div key={index} className="relative pl-8 border-l-2 border-purple-500/30">
+            <div className="absolute -left-[11px] top-1 w-5 h-5 bg-pink-500 rounded-full border-4 border-gray-900 animate-pulse-neon"></div>
+            
+            <h3 className="text-xl md:text-2xl font-bold text-white">{edu.institution}</h3>
+            <p className="text-md text-gray-400 mt-1">{edu.degree}</p>
+            <p className="text-sm text-gray-500 mt-1">{edu.duration}</p>
+            <p className="text-lg font-semibold text-purple-400 mt-2">{edu.score}</p>
           </div>
         ))}
       </div>
@@ -304,8 +479,8 @@ const ContactSection = () => {
         <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-link group">
           <Linkedin size={36} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
         </a>
-        <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-link group">
-          <Star size={36} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
+        <a href={portfolioData.contact.instagram} target="_blank" rel="noopener noreferrer" className="social-link group">
+          <Instagram size={36} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
         </a>
       </div>
       <ContactForm />

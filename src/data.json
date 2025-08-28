@@ -2,49 +2,88 @@
   "name": "Banda Sashank",
   "bio": "A B.Tech in Computer Science and Engineering student at Vellore Institute of Technology, Chennai.",
   "about": {
-    "intro": "I am an enthusiastic and motivated computer science and engineering student with a strong passion for technology. My academic journey has provided me with a solid foundation in programming and software development. I am always looking for opportunities to apply my skills to real-world problems and contribute to innovative projects.",
-    "expertise": "My technical expertise spans across various domains, from full-stack development to mobile applications. I am particularly interested in AI and machine learning applications, having developed projects using tools like OpenAI Whisper and GROQ APIs. I thrive in collaborative environments and enjoy leading teams to create engaging content and effective solutions."
-  },
+    "intro": "I'm a developer who builds apps that solve everyday problems. I focus on making them work well and also look good.",
+    "expertise": "Full-Stack Development: I build websites and apps from start to finish. I work on all the parts, from the design users see to the server and database behind it. My main tools are JavaScript (React, Express.js, Node.js), but I also have experience with Python and Spring Boot.\n\nAI & Automation Tools: I love making apps smarter and more helpful. I’ve built tools that can answer questions from a PDF, change audio files into text, and automatically upload videos to YouTube.\n\nDatabases & Version Control: I use both SQL (like MySQL) and NoSQL (like MongoDB) for databases. For all my projects, I use Git and GitHub to keep my code organized.\n\nCreative Skills: Besides coding, I also do graphic design and video editing. These skills help me make sure the final app is easy to use and looks great."  },
   "contact": {
     "phone": "+91 8074782067",
     "linkedin": "https://in.linkedin.com/in/banda-sashank-578893320",
-    "github": "https://github.com/sashankbanda"
+    "github": "https://github.com/sashankbanda",
+    "instagram": "https://www.instagram.com/sashankbanda"
   },
-  "skills": [
-    "Java", "Python", "Html", "CSS", "React", "JavaScript", "Node.js", "Express.js",
-    "Spring Boot", "Tailwind CSS", "Flutter", "Next.js", "MySQL", "Firebase",
-    "PostgreSQL", "MongoDB", "Windows", "Linux", "Git"
-  ],
+  "skills": {
+    "Web Development": {
+      "Backend": {
+        "Languages": ["JavaScript", "Python"],
+        "Version Control": ["Git", "GitHub"],
+        "Databases": ["MySQL", "MongoDB"],
+        "Frameworks": ["Spring Boot", "Express.js"]
+      },
+      "Frontend": {
+        "Languages & Markup": ["HTML", "CSS", "JavaScript", "TypeScript"],
+        "UI Tool Kit": ["React"],
+        "CSS Framework": ["Tailwind CSS"]
+      }
+    },
+    "Creative Skills": {
+      "General": {
+        "Graphic Designing": ["Adobe PhotoShop","canva","Adobe Illustrator"],
+        "Video Editing": ["Premier Pro","Capcut","Inshot","After effects (Basics: can adopt to project requirements)"],
+        "AI tools":["I can quickly adapt to new AI tools to use them effectively."]
+      }
+    }
+  },
   "projects": [
     {
-      "title": "Speak to Learn – Turn Audio into Smart Study Material",
-      "description": "I built this project during my internship at SASNEVI. It takes spoken audio, turns it into a PDF, and uploads it to an AI tool. Users can ask questions or get multiple-choice quizzes based on the content. It helps make learning from audio easier and more interactive.",
-      "tech": ["Python", "Html", "CSS", "React", "JavaScript"],
-      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+      "title": "Budget Planner",
+      "description": "A full-stack application with a FastAPI backend and React frontend to securely manage personal finances with user authentication and interactive data visualization.",
+      "tech": ["React", "FastAPI", "Python", "MongoDB", "Tailwind CSS", "Recharts"],
+      "githubLink": "https://github.com/sashankbanda/BudgetPlanner",
+      "liveLink": "https://allocash.netlify.app/",
+      "detailedDescription": "/projects/budget-planner.md"
     },
     {
-      "title": "YouTube Auto Uploader",
-      "description": "Built an automated uploader to schedule and publish videos to YouTube using the YouTube Data API. Prevents duplicate uploads by verifying filenames against existing video titles.",
-      "tech": ["Node.js", "OAuth 2.0", "YouTube Data API"],
-      "githubLink": "https://github.com/sashankbanda/youtube-auto-uploader"
+      "title": "QueryPDF Chatbot",
+      "description": "A full-stack application allowing users to upload PDF documents and ask questions, receiving instant, AI-generated answers with source citations directly from the text.",
+      "tech": ["React", "Python", "Flask", "LangChain", "Groq", "Google Gemini API"],
+      "githubLink": "https://github.com/sashankbanda/Query-PDF",
+      "liveLink": "https://iqpdf.netlify.app/",
+      "detailedDescription":"/projects/QueryPDF-Chatbot.md"
     },
     {
-      "title": "Audio to Text PDF Converter",
-      "description": "A full-stack app to convert audio files to text using OpenAI Whisper with real-time transcription. Features live SSE updates, progress bars, and PDF generation post transcription.",
-      "tech": ["Flask", "React.js", "OpenAI Whisper", "SSE"],
-      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+      "title": "Audio-to-Text PDF Converter",
+      "description": "A web application that uses OpenAI's Whisper model to automatically transcribe audio files into text, providing real-time progress updates and a downloadable PDF of the result.",
+      "tech": ["React.js", "Flask", "Python", "OpenAI Whisper", "Server-Sent Events (SSE)"],
+      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf",
+      "liveLink": "#",
+      "detailedDescription":"/projects/Audio-to-Text-PDF-Converter.md"
     },
     {
-      "title": "QueryPDF (AI PDF Question Answering)",
-      "description": "Developed a tool to query PDF content using LLMs via GROQ and Google APIs. Supports secure API-based interaction, a modular Flask backend, and a React frontend.",
-      "tech": ["Python", "React.js", "GROQ API", "Google API"],
-      "githubLink": "https://github.com/sashankbanda/Query-PDF"
+      "title": "YouTube Auto-Uploader",
+      "description": "A Node.js script that automates scheduling and uploading videos to a YouTube channel by reading all video details and file paths from an Excel spreadsheet.",
+      "tech": ["Node.js", "TypeScript", "YouTube Data API","OAuth 2.0", "xlsx", "dotenv"],
+      "githubLink": "https://github.com/sashankbanda/youtube-auto-uploader",
+      "liveLink": "",
+      "detailedDescription":"/projects/YouTube-Auto-Uploader.md"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Vellore Institute of Technology, Chennai",
+      "degree": "B.Tech, Computer Science and Engineering",
+      "duration": "Sept 2022 – June 2026",
+      "score": "CGPA: 8.04"
     },
     {
-      "title": "Audio to Text PDF to query solver",
-      "description": "Intenship: Contributed to a client project at SASNEVI Startup Company by developing a tool to convert audio to text and generate PDFs. This was part of a larger project including a Query PDF Bot.",
-      "tech": ["Flask", "React.js", "OpenAI Whisper", "Python"],
-      "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf"
+      "institution": "Narayana Junior College, Hyderabad",
+      "degree": "(11th, 12th)",
+      "duration": "June 2020 – May 2022",
+      "score": "Percentage: 95.8"
+    },
+    {
+      "institution": "Viswabharathi EM High School, Gudivada, Andhra Pradesh",
+      "degree": "SSC (10th Standard)",
+      "duration": "June 2019 – March 2020",
+      "score": "Percentage: 99.1"
     }
   ]
 }
