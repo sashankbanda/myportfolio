@@ -1,6 +1,7 @@
 {
-  "name": "Banda Sashank",
-  "bio": "A B.Tech in Computer Science and Engineering student at Vellore Institute of Technology, Chennai.",
+  "name": "Sashank",
+  "title": "Full-Stack Developer & AI Automation Specialist",
+  "bio": "I build web applications that solve real-world problems. Using React, Python, and AI integration to create efficient and user-friendly tools.",
   "about": {
     "intro": "I'm a developer who builds apps that solve everyday problems. I focus on making them work well and also look good.",
     "expertise": "Full-Stack Development: I build websites and apps from start to finish. I work on all the parts, from the design users see to the server and database behind it. My main tools are JavaScript (React, Express.js, Node.js), but I also have experience with Python and Spring Boot.\n\nAI & Automation Tools: I love making apps smarter and more helpful. I’ve built tools that can answer questions from a PDF, change audio files into text, and automatically upload videos to YouTube.\n\nDatabases & Version Control: I use both SQL (like MySQL) and NoSQL (like MongoDB) for databases. For all my projects, I use Git and GitHub to keep my code organized.\n\nCreative Skills: Besides coding, I also do graphic design and video editing. These skills help me make sure the final app is easy to use and looks great."  },
@@ -36,6 +37,7 @@
     {
       "title": "Budget Planner",
       "description": "A full-stack application with a FastAPI backend and React frontend to securely manage personal finances with user authentication and interactive data visualization.",
+      "image": "images/BudgetPlanner.png",
       "tech": ["React", "FastAPI", "Python", "MongoDB", "Tailwind CSS", "Recharts"],
       "githubLink": "https://github.com/sashankbanda/BudgetPlanner",
       "liveLink": "https://allocash.netlify.app/",
@@ -44,6 +46,7 @@
     {
       "title": "QueryPDF Chatbot",
       "description": "A full-stack application allowing users to upload PDF documents and ask questions, receiving instant, AI-generated answers with source citations directly from the text.",
+      "image": "images/QuerPDF.png",
       "tech": ["React", "Python", "Flask", "LangChain", "Groq", "Google Gemini API"],
       "githubLink": "https://github.com/sashankbanda/Query-PDF",
       "liveLink": "https://iqpdf.netlify.app/",
@@ -52,6 +55,7 @@
     {
       "title": "Audio-to-Text PDF Converter",
       "description": "A web application that uses OpenAI's Whisper model to automatically transcribe audio files into text, providing real-time progress updates and a downloadable PDF of the result.",
+      "image": "images/Audio2Text2Pdf.png",
       "tech": ["React.js", "Flask", "Python", "OpenAI Whisper", "Server-Sent Events (SSE)"],
       "githubLink": "https://github.com/sashankbanda/Audio-to-text-pdf",
       "liveLink": "#",
@@ -60,6 +64,7 @@
     {
       "title": "YouTube Auto-Uploader",
       "description": "A Node.js script that automates scheduling and uploading videos to a YouTube channel by reading all video details and file paths from an Excel spreadsheet.",
+      "image": "images/yt_Auto.png",
       "tech": ["Node.js", "TypeScript", "YouTube Data API","OAuth 2.0", "xlsx", "dotenv"],
       "githubLink": "https://github.com/sashankbanda/youtube-auto-uploader",
       "liveLink": "",

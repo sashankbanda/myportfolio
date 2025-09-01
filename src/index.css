@@ -15,3 +15,16 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shadow-neon-pink {
+  box-shadow: 0 0 8px #db2777, 0 0 16px #db2777, 0 0 24px #db2777; /* Deeper pink for a stronger glow */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

@@ -1,3 +1,10 @@
+### Key Features
+* **Multi-PDF Upload:** Process several documents at once.
+* **AI-Powered Q&A:** Ask natural language questions about your documents.
+* **Source Citations:** Get answers with verifiable page numbers.
+* **Side-by-Side View:** Read your PDF and chat with the AI on the same screen.
+
+***
 ### Description
 
 This is a **"Chat with your PDF"** web application. 📄💬
