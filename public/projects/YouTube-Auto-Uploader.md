@@ -1,5 +1,3 @@
-Of course! Here's a simple explanation of your project.
-
 ### Description 📝
 
 This project is a smart bot that automatically uploads videos from your computer to your YouTube channel. You can control everything from an Excel spreadsheet—telling the bot which video to upload, what its title and description should be, what tags to use, and when to schedule it for release.
