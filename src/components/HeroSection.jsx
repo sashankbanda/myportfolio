@@ -1,5 +1,4 @@
-import React from 'react';
-import { Linkedin, Github, Mail, Eye, Download } from 'lucide-react';
+import { Download, Eye, Github, Linkedin, Mail } from 'lucide-react';
 import portfolioData from '../data.json';
 const HeroSection = ({ setActiveSection }) => {
   return (
@@ -37,7 +36,7 @@ const HeroSection = ({ setActiveSection }) => {
         </button>
         <div className="flex items-center gap-4">
           <a
-            href="/B_SASHANK_RESUME_st.pdf"
+            href="/B_SASHANK_RESUME_u_v1.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white font-bold rounded-full shadow-lg
@@ -47,7 +46,7 @@ const HeroSection = ({ setActiveSection }) => {
             View Resume
           </a>
           <a
-            href="/B_SASHANK_RESUME_st.pdf"
+            href="/B_SASHANK_RESUME_u_v1.pdf"
             download
             className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white font-bold rounded-full shadow-lg
                        hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
